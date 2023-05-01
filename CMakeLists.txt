@@ -3,17 +3,17 @@ cmake_minimum_required(VERSION 3.21.0)
 project(yocto_parser)
 
 # set(LIB_CURL_URL "https://github.com/curl/curl.git")
-set(LIBCURL_DIR_SRC "${CMAKE_CURRENT_LIST_DIR}/libcurl_new/include")
-# set(LIBCURL_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR}/libcurl/install)
+set(LIBCURL_DIR_SRC "${CMAKE_CURRENT_LIST_DIR}/libcurl")
+set(LIBCURL_INC_DIR "${CMAKE_CURRENT_LIST_DIR}/libcurl/include")
 
 include(FetchContent)
 FetchContent_Declare(libcurl_var
   GIT_REPOSITORY "https://github.com/curl/curl.git"
   GIT_TAG "curl-8_0_0"
-  SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/libcurl_new"
+  SOURCE_DIR ${LIBCURL_DIR_SRC}
 )
 FetchContent_MakeAvailable(libcurl_var)
 
 add_executable(yocto_parser_main main.cpp)
-include_directories(${LIBCURL_DIR_SRC})
+include_directories(${LIBCURL_INC_DIR})
 #target_link_libraries(yocto_parser_main PUBLIC "${CMAKE_CURRENT_LIST_DIR}/libcurl_new/lib/")

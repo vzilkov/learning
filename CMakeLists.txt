@@ -16,4 +16,3 @@ FetchContent_MakeAvailable(libcurl_var)
 
 add_executable(yocto_parser_main main.cpp)
 include_directories(${LIBCURL_INC_DIR})
-#target_link_libraries(yocto_parser_main PUBLIC "${CMAKE_CURRENT_LIST_DIR}/libcurl_new/lib/")

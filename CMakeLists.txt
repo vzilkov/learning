@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21.0)
-#set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 project("yocto_parser")
 
 set(LIBCURL_DIR_SRC "${CMAKE_SOURCE_DIR}/libcurl")
@@ -20,7 +20,8 @@ FetchContent_Declare(lib_boost
 FetchContent_MakeAvailable(lib_boost)
 
 #set(HEADERS "${CURL_INCLUDE_DIR}/curl/curl.h")
-set(SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
+#set(SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
+set(SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/new_main.cpp")
 
 add_executable(yocto_parser ${HEADERS} ${SOURCES})
 target_include_directories(yocto_parser PRIVATE Boost::headers)

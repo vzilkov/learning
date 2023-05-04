@@ -44,7 +44,7 @@ int main(void)
 {
   std::cout << "Hello!!!" << std::endl;
   Client client;
-  std::cout << client.getResponse("http://ip-api.com/json/24.48.0.1") << std::endl;
+  std::cout << client.getResponse("http://ip-api.com") << std::endl;
   // boost::url_view uv("https://gnu.terminalroot.com.br/ip.php");
   // https://ip-api.com/docs/api:json
   
